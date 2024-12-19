@@ -55,20 +55,20 @@ fun CoinDetailScreen(
                                 .align(Alignment.CenterVertically)
                                 .weight(2f)
                         )
-                        Spacer(modifier = Modifier.height(15.dp))
-                        Text(text = "Tags", style = MaterialTheme.typography.headlineSmall)
-                        Spacer(modifier = Modifier.height(15.dp))
-                        FlowRow(
-                            horizontalArrangement = Arrangement.SpaceAround,
-                            verticalArrangement = Arrangement.SpaceEvenly,
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            coin.tags.forEach { tag -> CoinTag(tag = tag) }
-                        }
-                        Spacer(modifier = Modifier.height(15.dp))
-                        Text(text = "Team Members", style = MaterialTheme.typography.headlineSmall)
-                        Spacer(modifier = Modifier.height(15.dp))
                     }
+                    Spacer(modifier = Modifier.height(15.dp))
+                    Text(text = "Tags", style = MaterialTheme.typography.headlineSmall)
+                    Spacer(modifier = Modifier.height(15.dp))
+                    FlowRow(
+                        horizontalArrangement = Arrangement.Start,
+                        verticalArrangement = Arrangement.SpaceBetween,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        coin.tags.forEach { tag -> CoinTag(tag = tag) }
+                    }
+                    Spacer(modifier = Modifier.height(15.dp))
+                    Text(text = "Team Members", style = MaterialTheme.typography.headlineSmall)
+                    Spacer(modifier = Modifier.height(15.dp))
                 }
                 items(coin.team) { teamMember ->
                     TeamListItem(
